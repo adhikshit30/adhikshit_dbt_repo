@@ -1,0 +1,30 @@
+sources:
+
+  - name: airbnb
+    database: racko-master-project-505113
+    schema: airbnb_raw
+
+    tables:
+      - name: hosts
+        identifier: raw_hosts
+        columns: 
+          - name: ID
+            description: "This is column id"
+          - name: name
+            description: "This is column name "
+
+      - name: reviews
+        identifier: raw_reviews
+        columns: 
+          - name: listing_id
+            description: "This is listing id"
+          - name: date
+            description: "This is the date "  
+
+      - name: listings
+        identifier: raw_listings
+        columns: 
+          - name: id
+            description: "This is listing id"
+          - name: listing_url
+            description: "This is the url "           

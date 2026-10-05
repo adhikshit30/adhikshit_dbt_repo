@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: dim_hosts_cleansed
+    description: "Derives cleaned host data from src_hosts"
+    tests: 
+      - minimum_row_count:
+          min_row_count: 100
+
+    columns:
+      - name: host_id
+        description: "Unique identifier for each host"
+        tests:
+          - dbt_utils.not_null_proportion:
+              arguments:
+                at_least: 0.95
+          - unique
+          - not_null
+          - relationships:
+              to: ref('src_hosts')
+              field: host_id
+          - positive_values
+
+          
+
+
+      - name: host_name
+        description: "Name of the host"
+        tests:
+          - not_null
+
+      - name: is_superhost
+        description: "Indicates whether the host is a superhost"
+        tests:
+          - not_null
+          - accepted_values: 
+              values: [true, false]
+              quote: false
+
+
+
+      - name: created_at
+        description: "Record creation timestamp"
+        tests:
+          - not_null
+
+      - name: updated_at
+        description: "Record update timestamp"
+        tests:
+          - not_null

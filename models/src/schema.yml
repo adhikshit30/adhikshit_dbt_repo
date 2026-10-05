@@ -1,0 +1,45 @@
+models:
+
+  - name: src_hosts
+    description: "{{ doc('__overview__') }}"
+    columns:
+      - name: host_id
+        description: "this is host id column"
+      - name: host_name
+        description: "this is host name column"
+      - name: is_superhost
+        description: "this represents if the host is a superhost"
+      - name: created_at
+        
+      - name: updated_at
+
+  - name: src_listings
+    description: "this table derives data from source raw listing"
+    columns:
+      - name: listing_id
+        description: "this is host id column"
+      - name: listing_url
+        description: "this is host name column"
+      - name: listing_name
+        description: "this represents if the host is a superhost"
+      - name: created_at
+        
+      - name: room_type
+      - name: minimum_nights
+      - name: price_str
+      - name: host_id
+        
+      - name: updated_at
+
+  - name: src_reviews
+    description: "this table derives data from source raw reviews"
+    columns:
+      - name: listing_id
+        description: "this is host id column"
+      - name: date
+        description: "this is host name column"
+      - name: reviewer_name
+        description: "this represents if the host is a superhost"
+      - name: comments
+        
+      - name: sentiment
