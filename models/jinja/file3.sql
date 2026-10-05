@@ -1,14 +1,11 @@
-
-{%set my_host_id = 10%}
-
+{% set my_host_id = 10 %}
 
 {% if my_host_id < 10 %}
- 
-    SELECT 2+3
- 
+
+    select 2+3 as result
+
 {% else %}
- 
-    SELECT 12+ 13
- 
+
+    select 12+13 as result
+
 {% endif %}
- 

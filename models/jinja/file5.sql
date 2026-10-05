@@ -1,2 +1,3 @@
-select * from {{ref('dim_listings_w_hosts')}} where
-host_id = {{var("my_host_id")}}
+select *
+from {{ ref('dim_listings_w_hosts') }}
+where host_id = {{ var('my_host_id', 9) }}

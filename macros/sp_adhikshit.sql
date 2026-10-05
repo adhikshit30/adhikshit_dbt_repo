@@ -8,7 +8,7 @@
 
         BEGIN
  
-            UPDATE `{{ target.project }}.{{ target.dataset }}.src_hosts_old`
+            UPDATE `{{ target.project }}.{{ target.dataset }}.src_hosts`
 
             SET host_name = p_host_name
 
